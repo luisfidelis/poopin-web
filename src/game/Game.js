@@ -2,10 +2,25 @@ import React from 'react';
 import './Game.css';
 
 class Square extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value : null,
+    };
+  }
+
+  updateValue(newValue) {
+    return this.setState({ value : newValue })
+  }
+
   render() {
     return (
-      <button className="square" onClick={()=>alert('Ops...someone clicked a button')} >
-        {this.props.value}
+      <button 
+        className="square" 
+        onClick={() => this.updateValue('X')}
+      >
+        {this.state.value}
       </button>
     );
   }
