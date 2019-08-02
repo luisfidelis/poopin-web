@@ -4,7 +4,7 @@ import './Game.css';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={()=>alert('Ops...someone clicked a button')} >
         {this.props.value}
       </button>
     );
